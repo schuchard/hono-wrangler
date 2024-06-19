@@ -15,7 +15,7 @@ const ParamsSchema = z.object({
     }),
 });
 
-const UserSchema = z
+const CustomerSchema = z
   .object({
     id: z.string().openapi({
       example: '123',
@@ -26,8 +26,11 @@ const UserSchema = z
     age: z.number().openapi({
       example: 42,
     }),
+    createdAt: z.date().openapi({
+      example: new Date().toISOString(),
+    }),
   })
-  .openapi('User');
+  .openapi('Customer');
 
 const route = createRoute({
   method: 'get',
@@ -39,7 +42,7 @@ const route = createRoute({
     200: {
       content: {
         'application/json': {
-          schema: UserSchema,
+          schema: CustomerSchema,
         },
       },
       description: 'Retrieve the user',
@@ -54,8 +57,9 @@ app.openapi(route, (c) => {
       id,
       age: 20,
       name: 'Ultra-man',
+      createdAt: new Date().toISOString(),
     },
-    200, // You should specify the status code even if it is 200.
+    200,
   );
 });
 

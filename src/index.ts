@@ -1,17 +1,19 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
 import customerRoutes from './customer.route';
+import orderRoutes from './order.route';
 import { swaggerUI } from '@hono/swagger-ui';
 import { basicAuth } from 'hono/basic-auth';
 
 const app = new OpenAPIHono();
 
 app.route('/customers', customerRoutes);
+app.route('/orders', orderRoutes);
 
 app.get(
   '/docs',
   basicAuth({
     username: 'pass',
-    password: 'word1',
+    password: 'word',
   }),
   swaggerUI({ url: '/openapi' }),
 );
