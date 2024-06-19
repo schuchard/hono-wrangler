@@ -11,6 +11,8 @@ npm run dev
 npm run dev
 
 # http://localhost:8787/docs
+
+# credentials in src/index.ts
 ```
 
 ## Deploy
