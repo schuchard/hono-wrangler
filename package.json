@@ -16,6 +16,11 @@
     "wrangler": "^3.57.2"
   },
   "lint-staged": {
-    "*.{ts,js,css,md}": "prettier --write"
+    "*.{ts,js,css,md,json}": "prettier --write"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 120
   }
 }
