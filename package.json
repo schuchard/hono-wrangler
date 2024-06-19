@@ -6,7 +6,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "hono": "^4.4.6"
+    "@hono/swagger-ui": "^0.2.2",
+    "@hono/zod-openapi": "^0.14.5",
+    "hono": "^4.4.6",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240529.0",
@@ -21,6 +24,7 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true,
-    "printWidth": 120
+    "printWidth": 120,
+    "tabWidth": 2
   }
 }
